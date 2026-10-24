@@ -11,7 +11,7 @@ Os leads do formulário são enviados para um Google Apps Script, que grava cada
    - Executar como: **Eu**
    - Quem tem acesso: **Qualquer pessoa**
 5. Autorize quando o Google pedir e copie a **URL do app da Web** (termina em `/exec`).
-6. No arquivo `ads.js`, cole a URL em `leadsEndpoint`.
+6. No arquivo `ads.js`, cole a URL em `leadsEndpoint` e mude `leadPopupAtivo` para `true`.
 7. Faça o commit. O site publica sozinho.
 
 Para testar sem salvar nada, abra o site com `?preview=1` no final do endereço. Depois de configurar a URL, faça um teste real e confira se a linha apareceu na planilha.

@@ -9,7 +9,7 @@
   var cfg = window.ADS_CONFIG || {};
   var memoria = 0;
   var preview = /[?&]preview=1/.test(location.search);
-  var leadAtivo = !!cfg.leadsEndpoint || preview;
+  var leadAtivo = (!!cfg.leadPopupAtivo && !!cfg.leadsEndpoint) || preview;
   var ultimoFoco = null;
   var timer = null;
 

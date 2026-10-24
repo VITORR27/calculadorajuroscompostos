@@ -25,13 +25,14 @@ window.ADS_CONFIG = {
   },
 
   leadsEndpoint: "",     // URL do Apps Script que grava os leads na planilha
+  leadPopupAtivo: false, // true = liga o formulário de lead (só depois de preencher leadsEndpoint)
   leadNaSimulacao: 2,    // o formulário de lead aparece nesta simulação
 
-  popupAtivo: true,      // liga/desliga o popup de anúncio
+  popupAtivo: false,      // liga/desliga o popup de anúncio (ligar só depois da aprovação do AdSense)
   popupInicio: 4,        // primeiro popup de anúncio, na simulação número 4
   popupACada: 2,         // depois, um a cada 2 simulações (4, 6, 8...)
   popupSegundos: 5,      // segundos até liberar o botão de fechar
-  esconderEspacosVazios: false // true = esconde as caixas de anúncio enquanto não houver ID do AdSense
+  esconderEspacosVazios: true // true = esconde as caixas de anúncio enquanto não houver ID do AdSense
 };
 
 (function () {
