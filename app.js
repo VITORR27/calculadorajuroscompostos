@@ -31,41 +31,10 @@
     });
   });
 
-  /* ---------- Popup a cada duas simulações ---------- */
-  var cfg = window.ADS_CONFIG || {};
-  var contador = 0;
-  var timer = null;
-
-  function contarSimulacao() {
-    contador++;
-    if (cfg.popupAtivo && contador % (cfg.popupACada || 2) === 0) abrirPopup();
+  /* O contador de simulações, o formulário de lead e o popup ficam em lead.js */
+  function contarSimulacao(ctx) {
+    if (window.contarSimulacao) window.contarSimulacao(ctx);
   }
-
-  function abrirPopup() {
-    var p = $('popup'), btn = $('popup-fechar'), seg = $('popup-seg');
-    var restante = cfg.popupSegundos || 5;
-    seg.textContent = restante;
-    btn.disabled = true;
-    btn.innerHTML = 'Fechar em <b id="popup-seg">' + restante + '</b>s';
-    p.hidden = false;
-    window.ativarAnuncios(p);
-    clearInterval(timer);
-    timer = setInterval(function () {
-      restante--;
-      if (restante <= 0) {
-        clearInterval(timer);
-        btn.disabled = false;
-        btn.textContent = 'Fechar';
-      } else {
-        btn.innerHTML = 'Fechar em <b>' + restante + '</b>s';
-      }
-    }, 1000);
-  }
-
-  $('popup-fechar').addEventListener('click', function () {
-    if (this.disabled) return;
-    $('popup').hidden = true;
-  });
 
   /* ---------- Calculadora principal ---------- */
   var ultima = null;
@@ -153,7 +122,11 @@
     ultima = o;
     mostrarResultado(r, o);
     $('resultado').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-    contarSimulacao();
+    contarSimulacao({
+      calc: 'juros-compostos', valor_inicial: o.pv, aporte_mensal: o.pmt,
+      taxa: o.taxa, taxa_por: o.taxaUn, prazo: o.prazo, prazo_em: o.prazoUn,
+      valor_final: Math.round(r.final * 100) / 100
+    });
   });
 
   $('limpar').addEventListener('click', function () {
@@ -245,7 +218,7 @@
     $('res-meta-txt').textContent = txt;
     $('usar').hidden = !proposta;
     $('res-meta').hidden = false;
-    contarSimulacao();
+    contarSimulacao({ calc: 'meta', modo: modo, valor_desejado: alvo, ja_tenho: pv, taxa: taxa, taxa_por: taxaUn });
   });
 
   $('limpar-meta').addEventListener('click', function () {
@@ -273,4 +246,23 @@
     mostrarResultado(r, o);
     $('calculadora').scrollIntoView({ behavior: 'smooth' });
   });
+
+  /* Preenche a calculadora quando o endereço traz valores (links das outras ferramentas) */
+  (function () {
+    var q;
+    try { q = new URLSearchParams(location.search); } catch (e) { return; }
+    var achou = false;
+    ['pv', 'pmt', 'taxa', 'prazo'].forEach(function (k) {
+      if (!q.has(k)) return;
+      var v = ler(q.get(k));
+      if (isNaN(v) || v < 0) return;
+      $(k).value = k === 'prazo' ? String(v) : num.format(v);
+      achou = true;
+    });
+    [['taxaUn', 'taxa-un'], ['prazoUn', 'prazo-un']].forEach(function (p) {
+      var v = q.get(p[0]);
+      if (v === 'ano' || v === 'mes') { $(p[1]).value = v; achou = true; }
+    });
+    if (achou) setTimeout(function () { $('calculadora').scrollIntoView(); }, 50);
+  })();
 })();

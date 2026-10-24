@@ -3,22 +3,36 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Calculadora de Juros Compostos com aportes mensais</title>
-<meta name="description" content="Simule juros compostos com valor inicial, taxa em meses ou anos, prazo e aporte mensal. Veja a evolução mês a mês e descubra quanto investir para atingir sua meta.">
+<title>Calculadora de Juros Compostos com Aportes Mensais</title>
+<meta name="description" content="Simule juros compostos com valor inicial, aporte mensal, taxa ao mês ou ao ano e prazo. Veja o resultado mês a mês e descubra quanto investir para chegar à sua meta.">
+<link rel="canonical" href="https://vitorr27.github.io/calculadorajuroscompostos/">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:site_name" content="Juros Compostos">
+<meta property="og:title" content="Calculadora de Juros Compostos com Aportes Mensais">
+<meta property="og:description" content="Simule juros compostos com valor inicial, aporte mensal, taxa ao mês ou ao ano e prazo. Veja o resultado mês a mês e descubra quanto investir para chegar à sua meta.">
+<meta property="og:url" content="https://vitorr27.github.io/calculadorajuroscompostos/">
+<meta name="theme-color" content="#164533">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23164533'/%3E%3Cpath d='M6 22l7-7 5 4 8-9' stroke='%23e9b98f' stroke-width='3' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
+<!-- ADSENSE-META -->
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Calculadora de Juros Compostos","url":"https://vitorr27.github.io/calculadorajuroscompostos/","applicationCategory":"FinanceApplication","operatingSystem":"Any","inLanguage":"pt-BR","offers":{"@type":"Offer","price":"0","priceCurrency":"BRL"}}</script>
 </head>
 <body>
 
 <header class="topo">
   <div class="topo-in">
-    <a class="marca" href="#">Juros<span>Compostos</span></a>
-    <nav>
-      <a href="#calculadora">Calculadora</a>
-      <a href="#meta">Meta</a>
-      <a href="#entenda">Como funciona</a>
+    <a class="marca" href="index.html">Juros<span>Compostos</span></a>
+    <nav aria-label="Principal">
+      <a href="index.html" aria-current="page">Juros compostos</a>
+      <a href="orcamento-50-30-20.html">Orçamento</a>
+      <a href="reserva-de-emergencia.html">Reserva</a>
+      <a href="independencia-financeira.html">Independência</a>
+      <a href="guias.html">Guias</a>
     </nav>
   </div>
 </header>
@@ -27,8 +41,8 @@
 
 <div class="layout">
   <aside class="lateral"><div class="ad ad-vert" data-ad="left" data-w="160" data-h="600"></div></aside>
+  <main id="conteudo">
 
-  <main>
     <h1>Calculadora de juros compostos</h1>
     <p class="intro">Informe o valor inicial, a taxa, o prazo e quanto pretende investir por mês. O resultado mostra o total acumulado e a evolução mês a mês.</p>
 
@@ -177,8 +191,50 @@
       </div>
     </section>
 
+    
+    <article class="card texto" id="como-funciona">
+      <h2>Como usar a calculadora de juros compostos</h2>
+      <ol class="passos">
+        <li><strong>Valor inicial:</strong> quanto você já tem para investir hoje. Pode ser zero se vai começar só com aportes.</li>
+        <li><strong>Aporte mensal:</strong> quanto pretende acrescentar todo mês. Escolha se o depósito entra no início ou no fim do mês.</li>
+        <li><strong>Taxa de juros:</strong> informe a taxa e escolha se ela é ao mês ou ao ano. A calculadora faz a conversão para você.</li>
+        <li><strong>Período:</strong> digite o prazo em anos ou em meses, até 100 anos.</li>
+        <li>Clique em <strong>Calcular</strong>. Abra a tabela mês a mês para ver os juros, o total investido e o montante de cada mês.</li>
+      </ol>
+
+      <h2>Exemplo prático</h2>
+      <p>Imagine que você começa com R$ 1.000,00 e investe R$ 500,00 por mês, a uma taxa de 10% ao ano. Em 10 anos, você terá colocado R$ 61.000,00 do próprio bolso e o montante será de R$ 102.525,67. Ou seja, R$ 41.525,67 vêm dos juros.</p>
+      <p>Se o mesmo plano durar 20 anos, o montante sobe para R$ 365.857,11, e com 30 anos chega a R$ 1.048.871,06. Repare que dobrar o prazo faz muito mais diferença do que dobrar o aporte, porque os juros passam a render sobre os próprios juros.</p>
+      <div class="rolagem"><table>
+        <thead><tr><th>Prazo</th><th>Total investido</th><th>Juros</th><th>Montante</th></tr></thead>
+        <tbody>
+          <tr><td>10 anos</td><td>R$ 61.000,00</td><td>R$ 41.525,67</td><td>R$ 102.525,67</td></tr>
+          <tr><td>20 anos</td><td>R$ 121.000,00</td><td>R$ 244.857,11</td><td>R$ 365.857,11</td></tr>
+          <tr><td>30 anos</td><td>R$ 181.000,00</td><td>R$ 867.871,06</td><td>R$ 1.048.871,06</td></tr>
+        </tbody>
+      </table></div>
+      <p class="nota">Exemplo com valor inicial de R$ 1.000, aporte de R$ 500 no fim de cada mês e taxa de 10% ao ano constante.</p>
+
+      <h2>O que mais pesa no resultado</h2>
+      <ul>
+        <li><strong>Tempo:</strong> é o fator mais forte. Começar cedo vale mais do que tentar compensar depois com aportes maiores.</li>
+        <li><strong>Constância dos aportes:</strong> investir todo mês, mesmo valores menores, constrói o patrimônio de forma previsível.</li>
+        <li><strong>Taxa:</strong> uma diferença de poucos pontos percentuais ao ano muda bastante o resultado em prazos longos. Use a taxa líquida, depois de custos e impostos.</li>
+        <li><strong>Inflação:</strong> o dinheiro de daqui a 20 anos compra menos que o de hoje. Para simular em poder de compra atual, use uma taxa acima da inflação.</li>
+      </ul>
+      <div class="aviso">A calculadora trabalha com taxa constante, o que não acontece na vida real. Rendimentos passados e simulações não garantem resultados futuros. Para entender a fórmula e os erros mais comuns, leia o <a href="guia-juros-compostos.html">guia completo de juros compostos</a>.</div>
+    </article>
+
+    <section class="card lista-espera">
+      <h2>Planilha de controle financeiro pessoal</h2>
+      <p>Estamos preparando uma planilha simples para registrar receitas e despesas, acompanhar metas e ver para onde vai o dinheiro. Deixe seus dados para ser avisado quando ela estiver pronta.</p>
+      <button type="button" class="btn btn-primario" data-abrir-lead="lista-espera">Quero ser avisado</button>
+    </section>
+
+    <section class="card"><h2>Veja também</h2><div class="relacionados"><a href="juros-simples-vs-compostos.html">Juros simples x compostos<small>Compare os dois regimes lado a lado</small></a><a href="orcamento-50-30-20.html">Orçamento 50/30/20<small>Divida sua renda entre gastos e poupança</small></a><a href="reserva-de-emergencia.html">Reserva de emergência<small>Calcule quanto guardar e em quanto tempo</small></a><a href="independencia-financeira.html">Independência financeira<small>Descubra o patrimônio para viver de renda</small></a></div></section>
+
     <section id="entenda" class="card">
-      <h2>Entenda os juros compostos</h2>
+      <h2>Perguntas frequentes sobre juros compostos</h2>
       <p class="sub">Toque num item para abrir.</p>
 
       <details>
@@ -207,32 +263,25 @@
         <p>Imposto de renda, IOF, taxas de administração, inflação e variações de rentabilidade. O resultado é uma estimativa com taxa constante. Para comparar investimentos reais, use a taxa líquida que você espera receber.</p>
       </details>
     </section>
+  
   </main>
-
   <aside class="lateral"><div class="ad ad-vert" data-ad="right" data-w="160" data-h="600"></div></aside>
 </div>
 
 <div class="faixa faixa-base"><div class="ad" data-ad="bottom" data-w="728" data-h="90"></div></div>
 
 <footer class="rodape">
-  <div class="rodape-in">
-    <p>As simulações são estimativas e não constituem recomendação de investimento.</p>
-    <a href="privacidade.html">Política de privacidade</a>
+  <div class="rodape-cols">
+    <div><h3>Ferramentas</h3><a href="index.html">Calculadora de juros compostos</a><a href="juros-simples-vs-compostos.html">Juros simples x compostos</a><a href="orcamento-50-30-20.html">Orçamento 50/30/20</a><a href="reserva-de-emergencia.html">Reserva de emergência</a><a href="independencia-financeira.html">Independência financeira</a></div>
+    <div><h3>Guias</h3><a href="guia-juros-compostos.html">Guia completo de juros compostos</a><a href="controle-financeiro-pessoal.html">Controle financeiro pessoal</a><a href="guias.html">Todos os guias</a></div>
+    <div><h3>Site</h3><a href="sobre.html">Sobre</a><a href="contato.html">Contato</a><a href="privacidade.html">Política de privacidade</a><a href="termos.html">Termos de uso</a></div>
   </div>
+  <div class="rodape-in"><p>Conteúdo educacional. As simulações são estimativas, não constituem recomendação de investimento e não consideram impostos, taxas nem inflação, salvo quando indicado.</p><span>&copy; 2026 Juros Compostos</span></div>
 </footer>
-
-<div id="popup" class="popup" hidden>
-  <div class="popup-caixa" role="dialog" aria-modal="true" aria-label="Publicidade">
-    <div class="popup-topo">
-      <span>Publicidade</span>
-      <button type="button" id="popup-fechar" disabled>Fechar em <b id="popup-seg">5</b>s</button>
-    </div>
-    <div class="ad" data-ad="popup" data-w="300" data-h="250"></div>
-  </div>
-</div>
 
 <script src="calc.js"></script>
 <script src="ads.js"></script>
+<script src="lead.js"></script>
 <script src="app.js"></script>
 </body>
 </html>

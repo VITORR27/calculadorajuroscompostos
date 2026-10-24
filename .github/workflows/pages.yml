@@ -26,7 +26,7 @@ jobs:
       - name: Copiar arquivos do site
         run: |
           mkdir _site
-          cp index.html privacidade.html style.css calc.js ads.js app.js ads.txt _site/
+          rsync -a --exclude '.git' --exclude '.github' --exclude 'docs' --exclude '_site' ./ _site/
       - uses: actions/upload-pages-artifact@v3
         with:
           path: _site

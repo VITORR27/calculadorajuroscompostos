@@ -195,3 +195,101 @@ code { background: #f1ecdf; padding: 2px 6px; border-radius: 4px; font-size: .9e
   .topo nav { gap: 14px; }
   .topo nav a { font-size: .88rem; }
 }
+
+/* ===== Ampliações: páginas de conteúdo, leads, cookies ===== */
+.topo-in { flex-wrap: wrap; }
+.topo nav { flex-wrap: wrap; row-gap: 6px; }
+.topo nav a[aria-current="page"] { color: #fff; text-decoration: underline; text-underline-offset: 4px; }
+
+.ad[data-rotulo] { flex-direction: column; gap: 4px; }
+.ad[data-rotulo]::before { content: attr(data-rotulo); font-size: .68rem; letter-spacing: .04em; text-transform: uppercase; color: #8b8472; }
+.popup .ad[data-rotulo]::before { display: none; }
+
+html.modal-aberto { overflow: hidden; }
+
+/* texto de artigo */
+.texto { line-height: 1.7; }
+.texto h2 { margin: 28px 0 8px; font-size: 1.35rem; }
+.texto h2:first-child { margin-top: 0; }
+.texto h3 { margin: 22px 0 6px; font-size: 1.1rem; font-family: "IBM Plex Sans", sans-serif; font-weight: 600; }
+.texto p { margin: 0 0 14px; color: #2f3d35; }
+.texto ul, .texto ol { margin: 0 0 14px; padding-left: 22px; color: #2f3d35; }
+.texto li { margin-bottom: 6px; }
+.texto table { margin: 6px 0 16px; }
+.texto .rolagem { max-height: none; border: 1px solid var(--linha); border-radius: 8px; margin-bottom: 16px; }
+.texto .rolagem table { margin: 0; }
+.aviso { background: #f4efe1; border-left: 4px solid var(--terra); padding: 12px 16px; border-radius: 6px; font-size: .93rem; color: #3c3a30; margin: 18px 0; }
+.nota { color: var(--suave); font-size: .92rem; margin: 14px 0 0; }
+.nota-destaque { color: var(--tinta); font-size: 1.05rem; background: var(--verde-cl); padding: 14px 16px; border-radius: 8px; }
+.migalha { font-size: .88rem; color: var(--suave); margin: 0 0 12px; }
+.migalha a { color: var(--suave); }
+.relacionados { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 12px; margin-top: 8px; }
+.relacionados a { display: block; padding: 14px 16px; border: 1px solid var(--linha); border-radius: 8px; background: #fff; color: var(--tinta); text-decoration: none; font-weight: 500; }
+.relacionados a:hover { border-color: var(--verde); }
+.relacionados small { display: block; color: var(--suave); font-weight: 400; margin-top: 2px; }
+
+/* resultados das ferramentas */
+#saida { margin-top: 24px; padding-top: 22px; border-top: 1px solid var(--linha); }
+#saida .rolagem { margin-top: 16px; }
+
+/* lista de espera */
+.lista-espera { background: var(--verde-esc); color: #fff; border-color: var(--verde-esc); }
+.lista-espera h2 { color: #fff; }
+.lista-espera p { color: #d4e3da; max-width: 58ch; }
+.lista-espera .btn-primario { background: #e9b98f; color: #2b1c0e; max-width: none; flex: none; }
+.lista-espera .btn-primario:hover { background: #f0c8a5; }
+
+/* formulário de lead */
+.lead-caixa { width: 440px; position: relative; padding: 24px 22px 20px; }
+.lead-caixa h2 { font-size: 1.3rem; margin: 0 24px 8px 0; }
+.lead-txt { margin: 0 0 16px; color: var(--suave); font-size: .94rem; }
+.lead-caixa .campo { margin-bottom: 12px; }
+.lead-x { position: absolute; top: 8px; right: 10px; border: 0; background: transparent; font-size: 1.6rem; line-height: 1; cursor: pointer; color: var(--suave); padding: 4px 8px; }
+.lead-int { border: 0; padding: 0; margin: 14px 0 10px; }
+.lead-int legend { font-size: .9rem; font-weight: 500; padding: 0; margin-bottom: 6px; }
+.check { display: flex; gap: 9px; align-items: flex-start; font-size: .88rem; margin-bottom: 7px; cursor: pointer; }
+.check input { margin-top: 3px; width: 16px; height: 16px; accent-color: var(--verde); flex: none; }
+.check-obrig { margin-top: 12px; color: #3c4a42; }
+.hp { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; }
+.lead-teste { background: #fbe9d4; padding: 8px 12px; border-radius: 6px; font-size: .85rem; margin: 10px 0 0; }
+.lead-caixa .acoes { margin-top: 16px; }
+.lead-caixa .btn-primario { max-width: none; }
+.popup { overflow-y: auto; }
+.popup-caixa { max-height: 100%; overflow-y: auto; }
+
+/* aviso de cookies */
+.cookies { position: fixed; left: 12px; right: 12px; bottom: 12px; z-index: 40; max-width: 760px; margin: 0 auto; background: var(--tinta); color: #eef2ee; border-radius: 10px; padding: 14px 16px; display: flex; gap: 14px; align-items: center; justify-content: space-between; flex-wrap: wrap; box-shadow: 0 6px 24px rgba(0,0,0,.25); }
+.cookies p { margin: 0; font-size: .88rem; flex: 1 1 320px; }
+.cookies a { color: #e9b98f; }
+.cookies-bt { display: flex; gap: 8px; }
+.cookies .btn { padding: 8px 14px; font-size: .88rem; }
+.cookies .btn-sec { color: #fff; border-color: #6b7a71; }
+.cookies .btn-primario { background: #e9b98f; color: #2b1c0e; flex: none; }
+
+/* rodapé em colunas */
+.rodape-cols { max-width: 1280px; margin: 0 auto; padding: 28px 20px 12px; display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 22px; }
+.rodape-cols h3 { margin: 0 0 8px; font-size: .95rem; font-family: "IBM Plex Sans", sans-serif; }
+.rodape-cols a { display: block; color: var(--suave); text-decoration: none; font-size: .9rem; padding: 3px 0; }
+.rodape-cols a:hover { color: var(--verde); text-decoration: underline; }
+
+/* páginas sem anúncio */
+.coluna { max-width: 820px; margin: 0 auto; padding: 24px 20px 8px; }
+.card .campos + .campos { margin-top: 16px; }
+.passos { counter-reset: p; list-style: none; padding-left: 0 !important; }
+.passos li { counter-increment: p; position: relative; padding-left: 38px; margin-bottom: 12px; }
+.passos li::before { content: counter(p); position: absolute; left: 0; top: 1px; width: 26px; height: 26px; border-radius: 50%; background: var(--verde); color: #fff; font-size: .85rem; display: flex; align-items: center; justify-content: center; }
+
+@media (max-width: 760px) {
+  .lead-caixa { width: 100%; padding: 20px 16px 16px; }
+  .cookies { left: 8px; right: 8px; bottom: 8px; }
+  .cookies-bt { width: 100%; }
+  .cookies-bt .btn { flex: 1; }
+}
+select.sel { border: 1.5px solid var(--linha); border-radius: 8px; background: #fff; padding: 11px 12px; font: inherit; color: var(--tinta); }
+select.sel:focus { border-color: var(--verde); outline: 0; box-shadow: 0 0 0 3px rgba(30, 92, 68, .15); }
+
+/* Sem ID do AdSense configurado: esconde os espaços de anúncio (use ?preview=1 para ver) */
+.sem-anuncios .faixa,
+.sem-anuncios .lateral,
+.sem-anuncios .ad { display: none; }
+.sem-anuncios .layout { grid-template-columns: minmax(0, 1fr); }

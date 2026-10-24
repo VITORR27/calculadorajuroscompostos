@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Calculadora da Regra 50/30/20: Divida sua Renda</title>
+<meta name="description" content="Calcule quanto da sua renda vai para necessidades, desejos e poupança com a regra 50/30/20. Ajuste os percentuais e compare com seus gastos atuais.">
+<link rel="canonical" href="https://vitorr27.github.io/calculadorajuroscompostos/orcamento-50-30-20.html">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:site_name" content="Juros Compostos">
+<meta property="og:title" content="Calculadora da Regra 50/30/20: Divida sua Renda">
+<meta property="og:description" content="Calcule quanto da sua renda vai para necessidades, desejos e poupança com a regra 50/30/20. Ajuste os percentuais e compare com seus gastos atuais.">
+<meta property="og:url" content="https://vitorr27.github.io/calculadorajuroscompostos/orcamento-50-30-20.html">
+<meta name="theme-color" content="#164533">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23164533'/%3E%3Cpath d='M6 22l7-7 5 4 8-9' stroke='%23e9b98f' stroke-width='3' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<!-- ADSENSE-META -->
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Calculadora do orçamento 50/30/20","url":"https://vitorr27.github.io/calculadorajuroscompostos/orcamento-50-30-20.html","applicationCategory":"FinanceApplication","operatingSystem":"Any","inLanguage":"pt-BR","offers":{"@type":"Offer","price":"0","priceCurrency":"BRL"}}</script>
+</head>
+<body data-pagina="orcamento">
+
+<header class="topo">
+  <div class="topo-in">
+    <a class="marca" href="index.html">Juros<span>Compostos</span></a>
+    <nav aria-label="Principal">
+      <a href="index.html">Juros compostos</a>
+      <a href="orcamento-50-30-20.html" aria-current="page">Orçamento</a>
+      <a href="reserva-de-emergencia.html">Reserva</a>
+      <a href="independencia-financeira.html">Independência</a>
+      <a href="guias.html">Guias</a>
+    </nav>
+  </div>
+</header>
+
+<div class="faixa faixa-topo"><div class="ad" data-ad="top" data-w="728" data-h="90"></div></div>
+
+<div class="layout">
+  <aside class="lateral"><div class="ad ad-vert" data-ad="left" data-w="160" data-h="600"></div></aside>
+  <main id="conteudo">
+    <h1>Calculadora do orçamento 50/30/20</h1>
+    <p class="intro">Informe sua renda líquida e veja quanto destinar a necessidades, desejos e poupança. Se quiser, compare com o que você gasta hoje.</p>
+
+    <section class="card">
+    <form id="form-ferr" autocomplete="off" novalidate>
+      <div class="campos"><label class="campo"><span>Renda mensal líquida</span><div class="entrada"><b>R$</b><input id="renda" type="text" inputmode="decimal" data-moeda value="5.000,00"></div></label><div class="campo"><span>&nbsp;</span></div><label class="campo"><span>Necessidades</span><div class="entrada"><input id="pn" type="text" inputmode="decimal" value="50"><b>%</b></div></label><label class="campo"><span>Desejos</span><div class="entrada"><input id="pd" type="text" inputmode="decimal" value="30"><b>%</b></div></label><label class="campo"><span>Poupança e investimentos</span><div class="entrada"><input id="pp" type="text" inputmode="decimal" value="20"><b>%</b></div></label><div class="campo"><span>&nbsp;</span></div><label class="campo"><span>Gasto atual com necessidades (opcional)</span><div class="entrada"><b>R$</b><input id="an" type="text" inputmode="decimal" data-moeda value=""></div></label><label class="campo"><span>Gasto atual com desejos (opcional)</span><div class="entrada"><b>R$</b><input id="ad" type="text" inputmode="decimal" data-moeda value=""></div></label></div>
+      <p id="erro-ferr" class="erro" role="alert" hidden></p>
+      <div class="acoes"><button type="submit" class="btn btn-primario">Calcular</button><button type="button" id="limpar-ferr" class="btn btn-sec">Limpar</button></div>
+    </form>
+    <div id="saida" hidden></div>
+    </section>
+
+    <div class="faixa faixa-meio"><div class="ad" data-ad="mid" data-w="728" data-h="90"></div></div>
+
+    <article class="card texto">
+      <h2>Como funciona a regra 50/30/20</h2>
+      <p>A regra divide a renda líquida (o que cai na conta depois dos descontos) em três grupos. Ela ficou conhecida pelo livro <em>All Your Worth</em>, de Elizabeth Warren e Amelia Warren Tyagi, e serve como ponto de partida simples para organizar o orçamento.</p>
+      <ul>
+        <li><strong>50% para necessidades:</strong> moradia, contas básicas, alimentação, transporte, saúde, educação e parcelas mínimas de dívidas.</li>
+        <li><strong>30% para desejos:</strong> lazer, restaurantes, assinaturas, viagens e compras que você poderia cortar sem comprometer o essencial.</li>
+        <li><strong>20% para poupança e investimentos:</strong> reserva de emergência, aposentadoria, objetivos de longo prazo e pagamento extra de dívidas.</li>
+      </ul>
+      <h2>Como aplicar na prática</h2>
+      <ol class="passos">
+        <li>Some sua renda líquida mensal. Se a renda varia, use a média dos últimos meses ou o valor do mês mais fraco.</li>
+        <li>Levante seus gastos de 1 a 3 meses no extrato do banco e na fatura do cartão.</li>
+        <li>Classifique cada gasto em necessidade ou desejo. Na dúvida, pergunte: se eu cortasse isso, minha vida básica continuaria funcionando?</li>
+        <li>Compare com a meta. Se as necessidades passam de 50%, procure onde reduzir; se os desejos estouram, defina um teto mensal.</li>
+        <li>Automatize a parte da poupança: programe a transferência para o dia seguinte ao recebimento, antes de gastar.</li>
+      </ol>
+      <h2>Quando adaptar os percentuais</h2>
+      <p>A regra é uma referência, não uma lei. Em cidades com aluguel caro ou com renda baixa, as necessidades podem passar de 50%, e um ajuste para 60/20/20 já é um bom começo. Quem tem dívidas caras deve priorizar quitá-las, usando parte dos desejos e da poupança para isso. Quem quer se aposentar mais cedo pode inverter: 50/20/30, com 30% de investimentos.</p>
+      <h2>Para onde vai a parte da poupança?</h2>
+      <p>Primeiro, forme uma <a href="reserva-de-emergencia.html">reserva de emergência</a>. Depois, direcione o valor para objetivos de longo prazo. Use a <a href="index.html">calculadora de juros compostos</a> para ver como aportes mensais crescem com o tempo, e a calculadora de <a href="independencia-financeira.html">independência financeira</a> para dar uma meta ao seu plano.</p>
+      <div class="aviso">Esta ferramenta é educacional e não substitui o acompanhamento de um profissional de planejamento financeiro.</div>
+    </article>
+
+    <section class="card lista-espera">
+      <h2>Planilha de controle financeiro pessoal</h2>
+      <p>Estamos preparando uma planilha simples para registrar receitas e despesas, acompanhar metas e ver para onde vai o dinheiro. Deixe seus dados para ser avisado quando ela estiver pronta.</p>
+      <button type="button" class="btn btn-primario" data-abrir-lead="lista-espera">Quero ser avisado</button>
+    </section>
+
+    <section class="card"><h2>Veja também</h2><div class="relacionados"><a href="index.html">Calculadora de juros compostos<small>Simule aportes mensais, taxa e prazo</small></a><a href="juros-simples-vs-compostos.html">Juros simples x compostos<small>Compare os dois regimes lado a lado</small></a><a href="reserva-de-emergencia.html">Reserva de emergência<small>Calcule quanto guardar e em quanto tempo</small></a><a href="independencia-financeira.html">Independência financeira<small>Descubra o patrimônio para viver de renda</small></a></div></section>
+  </main>
+  <aside class="lateral"><div class="ad ad-vert" data-ad="right" data-w="160" data-h="600"></div></aside>
+</div>
+
+<div class="faixa faixa-base"><div class="ad" data-ad="bottom" data-w="728" data-h="90"></div></div>
+
+<footer class="rodape">
+  <div class="rodape-cols">
+    <div><h3>Ferramentas</h3><a href="index.html">Calculadora de juros compostos</a><a href="juros-simples-vs-compostos.html">Juros simples x compostos</a><a href="orcamento-50-30-20.html">Orçamento 50/30/20</a><a href="reserva-de-emergencia.html">Reserva de emergência</a><a href="independencia-financeira.html">Independência financeira</a></div>
+    <div><h3>Guias</h3><a href="guia-juros-compostos.html">Guia completo de juros compostos</a><a href="controle-financeiro-pessoal.html">Controle financeiro pessoal</a><a href="guias.html">Todos os guias</a></div>
+    <div><h3>Site</h3><a href="sobre.html">Sobre</a><a href="contato.html">Contato</a><a href="privacidade.html">Política de privacidade</a><a href="termos.html">Termos de uso</a></div>
+  </div>
+  <div class="rodape-in"><p>Conteúdo educacional. As simulações são estimativas, não constituem recomendação de investimento e não consideram impostos, taxas nem inflação, salvo quando indicado.</p><span>&copy; 2026 Juros Compostos</span></div>
+</footer>
+
+<script src="calc.js"></script>
+<script src="ads.js"></script>
+<script src="lead.js"></script>
+<script src="tools.js"></script>
+</body>
+</html>

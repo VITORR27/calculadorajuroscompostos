@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Calculadora de Reserva de Emergência: Quanto Guardar</title>
+<meta name="description" content="Descubra o valor ideal da sua reserva de emergência, quanto falta e em quanto tempo você chega lá guardando um valor por mês.">
+<link rel="canonical" href="https://vitorr27.github.io/calculadorajuroscompostos/reserva-de-emergencia.html">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:site_name" content="Juros Compostos">
+<meta property="og:title" content="Calculadora de Reserva de Emergência: Quanto Guardar">
+<meta property="og:description" content="Descubra o valor ideal da sua reserva de emergência, quanto falta e em quanto tempo você chega lá guardando um valor por mês.">
+<meta property="og:url" content="https://vitorr27.github.io/calculadorajuroscompostos/reserva-de-emergencia.html">
+<meta name="theme-color" content="#164533">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23164533'/%3E%3Cpath d='M6 22l7-7 5 4 8-9' stroke='%23e9b98f' stroke-width='3' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<!-- ADSENSE-META -->
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Calculadora de reserva de emergência","url":"https://vitorr27.github.io/calculadorajuroscompostos/reserva-de-emergencia.html","applicationCategory":"FinanceApplication","operatingSystem":"Any","inLanguage":"pt-BR","offers":{"@type":"Offer","price":"0","priceCurrency":"BRL"}}</script>
+</head>
+<body data-pagina="reserva">
+
+<header class="topo">
+  <div class="topo-in">
+    <a class="marca" href="index.html">Juros<span>Compostos</span></a>
+    <nav aria-label="Principal">
+      <a href="index.html">Juros compostos</a>
+      <a href="orcamento-50-30-20.html">Orçamento</a>
+      <a href="reserva-de-emergencia.html" aria-current="page">Reserva</a>
+      <a href="independencia-financeira.html">Independência</a>
+      <a href="guias.html">Guias</a>
+    </nav>
+  </div>
+</header>
+
+<div class="faixa faixa-topo"><div class="ad" data-ad="top" data-w="728" data-h="90"></div></div>
+
+<div class="layout">
+  <aside class="lateral"><div class="ad ad-vert" data-ad="left" data-w="160" data-h="600"></div></aside>
+  <main id="conteudo">
+    <h1>Calculadora de reserva de emergência</h1>
+    <p class="intro">Informe suas despesas essenciais e quantos meses de segurança você quer ter. A calculadora mostra a meta e o tempo para alcançá-la.</p>
+
+    <section class="card">
+    <form id="form-ferr" autocomplete="off" novalidate>
+      <div class="campos"><label class="campo"><span>Despesas essenciais por mês</span><div class="entrada"><b>R$</b><input id="desp" type="text" inputmode="decimal" data-moeda value="4.000,00"></div></label><label class="campo"><span>Meses de cobertura</span><select id="meses" class="sel"><option value="3">3 meses</option><option value="6" selected>6 meses</option><option value="9">9 meses</option><option value="12">12 meses</option></select></label><label class="campo"><span>Quanto já tem guardado</span><div class="entrada"><b>R$</b><input id="guardado" type="text" inputmode="decimal" data-moeda value="2.000,00"></div></label><label class="campo"><span>Quanto pode guardar por mês</span><div class="entrada"><b>R$</b><input id="aporte" type="text" inputmode="decimal" data-moeda value="800,00"></div></label><div class="campo"><span>Rendimento esperado</span><div class="entrada duplo"><input id="t" type="text" inputmode="decimal" value="10,00" aria-label="Rendimento esperado"><b>%</b><select id="t-un" aria-label="Período da taxa"><option value="ano" selected>ao ano</option><option value="mes">ao mês</option></select></div></div></div>
+      <p id="erro-ferr" class="erro" role="alert" hidden></p>
+      <div class="acoes"><button type="submit" class="btn btn-primario">Calcular</button><button type="button" id="limpar-ferr" class="btn btn-sec">Limpar</button></div>
+    </form>
+    <div id="saida" hidden></div>
+    </section>
+
+    <div class="faixa faixa-meio"><div class="ad" data-ad="mid" data-w="728" data-h="90"></div></div>
+
+    <article class="card texto">
+      <h2>O que é a reserva de emergência</h2>
+      <p>É um dinheiro separado para imprevistos: perda de renda, problema de saúde, conserto urgente ou despesa inesperada. Ela existe para evitar que você precise usar crédito caro, como cartão rotativo e cheque especial, ou vender investimentos na hora errada.</p>
+      <h2>Quanto guardar</h2>
+      <p>O ponto de partida é multiplicar suas <strong>despesas essenciais mensais</strong> (moradia, contas, mercado, transporte, saúde e parcelas obrigatórias) pelo número de meses de cobertura. Não inclua lazer nem gastos que podem ser pausados.</p>
+      <ul>
+        <li><strong>3 a 6 meses:</strong> costuma ser indicado para quem tem renda estável, como empregos com carteira assinada e servidores.</li>
+        <li><strong>6 a 12 meses:</strong> costuma ser indicado para autônomos, empreendedores e quem tem renda variável ou depende de uma única fonte.</li>
+        <li>Mais meses também fazem sentido se você tem dependentes, problemas de saúde recorrentes ou atua em área instável.</li>
+      </ul>
+      <p>Exemplo: com despesas essenciais de R$ 4.000,00 e meta de 6 meses, a reserva ideal é R$ 24.000,00. Guardando R$ 800,00 por mês, sem contar rendimento, seriam 30 meses para completar.</p>
+      <h2>Onde manter a reserva</h2>
+      <p>A prioridade é <strong>liquidez e segurança</strong>, não rentabilidade. Em geral, usa-se aplicações de baixo risco com resgate rápido, como títulos públicos pós-fixados (Tesouro Selic) e CDBs com liquidez diária de bancos sólidos. Evite aplicações que oscilam muito ou que têm prazo de carência. Antes de escolher, compare taxas, custos e a cobertura do Fundo Garantidor de Créditos (FGC) vigente.</p>
+      <h2>Como montar sem sofrer</h2>
+      <ol class="passos">
+        <li>Defina a meta com a calculadora acima.</li>
+        <li>Abra uma conta ou aplicação separada, para não misturar com o dinheiro do dia a dia.</li>
+        <li>Programe o aporte para o dia do recebimento.</li>
+        <li>Use a reserva só em emergências de verdade e reponha o valor assim que possível.</li>
+        <li>Reajuste a meta quando suas despesas mudarem.</li>
+      </ol>
+      <div class="aviso">O tempo estimado considera rendimento constante e aportes no fim de cada mês, sem impostos. Não é recomendação de investimento.</div>
+      <p>Depois de completar a reserva, veja como os aportes crescem na <a href="index.html">calculadora de juros compostos</a> ou organize o orçamento com a <a href="orcamento-50-30-20.html">regra 50/30/20</a>.</p>
+    </article>
+
+    <section class="card lista-espera">
+      <h2>Planilha de controle financeiro pessoal</h2>
+      <p>Estamos preparando uma planilha simples para registrar receitas e despesas, acompanhar metas e ver para onde vai o dinheiro. Deixe seus dados para ser avisado quando ela estiver pronta.</p>
+      <button type="button" class="btn btn-primario" data-abrir-lead="lista-espera">Quero ser avisado</button>
+    </section>
+
+    <section class="card"><h2>Veja também</h2><div class="relacionados"><a href="index.html">Calculadora de juros compostos<small>Simule aportes mensais, taxa e prazo</small></a><a href="juros-simples-vs-compostos.html">Juros simples x compostos<small>Compare os dois regimes lado a lado</small></a><a href="orcamento-50-30-20.html">Orçamento 50/30/20<small>Divida sua renda entre gastos e poupança</small></a><a href="independencia-financeira.html">Independência financeira<small>Descubra o patrimônio para viver de renda</small></a></div></section>
+  </main>
+  <aside class="lateral"><div class="ad ad-vert" data-ad="right" data-w="160" data-h="600"></div></aside>
+</div>
+
+<div class="faixa faixa-base"><div class="ad" data-ad="bottom" data-w="728" data-h="90"></div></div>
+
+<footer class="rodape">
+  <div class="rodape-cols">
+    <div><h3>Ferramentas</h3><a href="index.html">Calculadora de juros compostos</a><a href="juros-simples-vs-compostos.html">Juros simples x compostos</a><a href="orcamento-50-30-20.html">Orçamento 50/30/20</a><a href="reserva-de-emergencia.html">Reserva de emergência</a><a href="independencia-financeira.html">Independência financeira</a></div>
+    <div><h3>Guias</h3><a href="guia-juros-compostos.html">Guia completo de juros compostos</a><a href="controle-financeiro-pessoal.html">Controle financeiro pessoal</a><a href="guias.html">Todos os guias</a></div>
+    <div><h3>Site</h3><a href="sobre.html">Sobre</a><a href="contato.html">Contato</a><a href="privacidade.html">Política de privacidade</a><a href="termos.html">Termos de uso</a></div>
+  </div>
+  <div class="rodape-in"><p>Conteúdo educacional. As simulações são estimativas, não constituem recomendação de investimento e não consideram impostos, taxas nem inflação, salvo quando indicado.</p><span>&copy; 2026 Juros Compostos</span></div>
+</footer>
+
+<script src="calc.js"></script>
+<script src="ads.js"></script>
+<script src="lead.js"></script>
+<script src="tools.js"></script>
+</body>
+</html>

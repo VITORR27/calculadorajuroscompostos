@@ -54,7 +54,19 @@
     return null;
   }
 
-  var api = { taxaMensal: taxaMensal, meses: meses, simular: simular, aporteNecessario: aporteNecessario, prazoNecessario: prazoNecessario };
+  /* Formatação e leitura de números no padrão brasileiro. */
+  var brl = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' });
+  var num = new Intl.NumberFormat('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+
+  function ler(texto) {
+    var t = String(texto).trim().replace(/\s/g, '').replace(/^R\$/, '');
+    if (t === '') return NaN;
+    if (t.indexOf(',') > -1) t = t.replace(/\./g, '').replace(',', '.');
+    else if ((t.match(/\./g) || []).length > 1) t = t.replace(/\./g, '');
+    return Number(t);
+  }
+
+  var api = { taxaMensal: taxaMensal, meses: meses, simular: simular, aporteNecessario: aporteNecessario, prazoNecessario: prazoNecessario, brl: brl, num: num, ler: ler };
   if (typeof module !== 'undefined' && module.exports) module.exports = api;
   else root.Calc = api;
 })(this);
