@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://vitorr27.github.io/calculadorajuroscompostos/sitemap.xml
+Sitemap: https://finup.club/sitemap.xml

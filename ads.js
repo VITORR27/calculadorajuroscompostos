@@ -30,7 +30,8 @@ window.ADS_CONFIG = {
   popupAtivo: true,      // liga/desliga o popup de anúncio
   popupInicio: 4,        // primeiro popup de anúncio, na simulação número 4
   popupACada: 2,         // depois, um a cada 2 simulações (4, 6, 8...)
-  popupSegundos: 5       // segundos até liberar o botão de fechar
+  popupSegundos: 5,      // segundos até liberar o botão de fechar
+  esconderEspacosVazios: false // true = esconde as caixas de anúncio enquanto não houver ID do AdSense
 };
 
 (function () {
@@ -138,7 +139,7 @@ window.ADS_CONFIG = {
      Para ver o layout dos anúncios em teste, abra o site com ?preview=1 no final do endereço. */
   var emTeste = /[?&]preview=1/.test(location.search);
   window.JC_anunciosAtivos = !!cfg.client || emTeste;
-  if (!window.JC_anunciosAtivos) document.documentElement.classList.add('sem-anuncios');
+  if (cfg.esconderEspacosVazios && !window.JC_anunciosAtivos) document.documentElement.classList.add('sem-anuncios');
 
   aplicarPersonalizacao();
   adicionarMeta();
