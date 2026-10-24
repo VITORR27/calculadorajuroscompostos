@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Calculadora de Juros Compostos com aportes mensais</title>
+<meta name="description" content="Simule juros compostos com valor inicial, taxa em meses ou anos, prazo e aporte mensal. Veja a evolução mês a mês e descubra quanto investir para atingir sua meta.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="topo">
+  <div class="topo-in">
+    <a class="marca" href="#">Juros<span>Compostos</span></a>
+    <nav>
+      <a href="#calculadora">Calculadora</a>
+      <a href="#meta">Meta</a>
+      <a href="#entenda">Como funciona</a>
+    </nav>
+  </div>
+</header>
+
+<div class="faixa faixa-topo"><div class="ad" data-ad="top" data-w="728" data-h="90"></div></div>
+
+<div class="layout">
+  <aside class="lateral"><div class="ad ad-vert" data-ad="left" data-w="160" data-h="600"></div></aside>
+
+  <main>
+    <h1>Calculadora de juros compostos</h1>
+    <p class="intro">Informe o valor inicial, a taxa, o prazo e quanto pretende investir por mês. O resultado mostra o total acumulado e a evolução mês a mês.</p>
+
+    <section id="calculadora" class="card">
+      <form id="form-calc" autocomplete="off" novalidate>
+        <div class="campos">
+          <label class="campo">
+            <span>Valor inicial</span>
+            <div class="entrada"><b>R$</b><input id="pv" type="text" inputmode="decimal" value="1.000,00"></div>
+          </label>
+
+          <label class="campo">
+            <span>Aporte mensal</span>
+            <div class="entrada"><b>R$</b><input id="pmt" type="text" inputmode="decimal" value="500,00"></div>
+          </label>
+
+          <div class="campo">
+            <span>Taxa de juros</span>
+            <div class="entrada duplo">
+              <input id="taxa" type="text" inputmode="decimal" value="10,00" aria-label="Taxa de juros">
+              <b>%</b>
+              <select id="taxa-un" aria-label="Período da taxa">
+                <option value="ano">ao ano</option>
+                <option value="mes">ao mês</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="campo">
+            <span>Período</span>
+            <div class="entrada duplo">
+              <input id="prazo" type="text" inputmode="numeric" value="10" aria-label="Período">
+              <select id="prazo-un" aria-label="Unidade do período">
+                <option value="ano">anos</option>
+                <option value="mes">meses</option>
+              </select>
+            </div>
+          </div>
+
+          <label class="campo largo">
+            <span>Quando o aporte entra</span>
+            <select id="momento">
+              <option value="fim">No fim de cada mês</option>
+              <option value="inicio">No início de cada mês</option>
+            </select>
+          </label>
+        </div>
+
+        <p id="erro-calc" class="erro" role="alert" hidden></p>
+
+        <div class="acoes">
+          <button type="submit" class="btn btn-primario">Calcular</button>
+          <button type="button" id="limpar" class="btn btn-sec">Limpar</button>
+        </div>
+      </form>
+
+      <div id="resultado" hidden>
+        <div class="resumo">
+          <div class="dado destaque"><small>Valor final</small><strong id="r-final"></strong></div>
+          <div class="dado"><small>Total investido</small><strong id="r-investido"></strong></div>
+          <div class="dado"><small>Total em juros</small><strong id="r-juros"></strong></div>
+        </div>
+
+        <figure class="grafico">
+          <div id="grafico"></div>
+          <figcaption><i class="l1"></i> Valor acumulado <i class="l2"></i> Total investido</figcaption>
+        </figure>
+
+        <details class="tabela-box" id="tabela-box">
+          <summary>Ver tabela mês a mês</summary>
+          <div class="rolagem">
+            <table>
+              <thead>
+                <tr><th>Mês</th><th>Aporte</th><th>Juros do mês</th><th>Total investido</th><th>Total em juros</th><th>Montante</th></tr>
+              </thead>
+              <tbody id="tabela"></tbody>
+            </table>
+          </div>
+        </details>
+      </div>
+    </section>
+
+    <div class="faixa faixa-meio"><div class="ad" data-ad="mid" data-w="728" data-h="90"></div></div>
+
+    <section id="meta" class="card">
+      <h2>Quanto preciso para chegar na minha meta?</h2>
+      <p class="sub">Escolha o que você quer descobrir.</p>
+
+      <div class="abas" role="tablist">
+        <button type="button" class="aba ativa" data-modo="aporte" role="tab">Quanto investir por mês</button>
+        <button type="button" class="aba" data-modo="prazo" role="tab">Em quanto tempo chego lá</button>
+      </div>
+
+      <form id="form-meta" autocomplete="off" novalidate>
+        <div class="campos">
+          <label class="campo">
+            <span>Quero ter</span>
+            <div class="entrada"><b>R$</b><input id="m-alvo" type="text" inputmode="decimal" value="500.000,00"></div>
+          </label>
+
+          <label class="campo">
+            <span>Já tenho</span>
+            <div class="entrada"><b>R$</b><input id="m-pv" type="text" inputmode="decimal" value="0,00"></div>
+          </label>
+
+          <div class="campo">
+            <span>Taxa de juros</span>
+            <div class="entrada duplo">
+              <input id="m-taxa" type="text" inputmode="decimal" value="10,00" aria-label="Taxa de juros">
+              <b>%</b>
+              <select id="m-taxa-un" aria-label="Período da taxa">
+                <option value="ano">ao ano</option>
+                <option value="mes">ao mês</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="campo" id="campo-m-prazo">
+            <span>Em quanto tempo</span>
+            <div class="entrada duplo">
+              <input id="m-prazo" type="text" inputmode="numeric" value="20" aria-label="Período">
+              <select id="m-prazo-un" aria-label="Unidade do período">
+                <option value="ano">anos</option>
+                <option value="mes">meses</option>
+              </select>
+            </div>
+          </div>
+
+          <label class="campo" id="campo-m-pmt" hidden>
+            <span>Posso investir por mês</span>
+            <div class="entrada"><b>R$</b><input id="m-pmt" type="text" inputmode="decimal" value="1.000,00"></div>
+          </label>
+        </div>
+
+        <p id="erro-meta" class="erro" role="alert" hidden></p>
+
+        <div class="acoes">
+          <button type="submit" class="btn btn-primario">Calcular</button>
+          <button type="button" id="limpar-meta" class="btn btn-sec">Limpar</button>
+        </div>
+      </form>
+
+      <div id="res-meta" class="res-meta" hidden>
+        <p id="res-meta-txt"></p>
+        <button type="button" id="usar" class="btn btn-sec">Ver essa simulação na calculadora</button>
+      </div>
+    </section>
+
+    <section id="entenda" class="card">
+      <h2>Entenda os juros compostos</h2>
+      <p class="sub">Toque num item para abrir.</p>
+
+      <details>
+        <summary>O que são juros compostos?</summary>
+        <p>É quando os juros de cada período passam a render também. Você ganha juros sobre o valor que investiu e sobre os juros que já acumulou. Por isso o crescimento é mais lento no começo e vai ficando mais forte com o passar do tempo.</p>
+      </details>
+
+      <details>
+        <summary>Qual é a fórmula?</summary>
+        <p>Sem aportes: <code>M = C × (1 + i)^n</code>, onde M é o montante, C o valor inicial, i a taxa por período e n o número de períodos.</p>
+        <p>Com aportes mensais no fim do mês: <code>M = C × (1 + i)^n + P × [((1 + i)^n − 1) / i]</code>, sendo P o valor aportado a cada mês. Se o aporte entra no início do mês, a segunda parte é multiplicada por (1 + i).</p>
+      </details>
+
+      <details>
+        <summary>Taxa ao ano ou ao mês: como a calculadora converte?</summary>
+        <p>Se você informa a taxa ao ano, ela é convertida para a taxa mensal equivalente: <code>i_mês = (1 + i_ano)^(1/12) − 1</code>. Assim, 12% ao ano rende 12% ao fim de 12 meses, e não 12 vezes 1%. Se informa ao mês, o valor é usado direto.</p>
+      </details>
+
+      <details>
+        <summary>Por que começar cedo faz tanta diferença?</summary>
+        <p>Porque os juros acumulados também rendem. Os últimos anos de um investimento longo costumam gerar mais dinheiro que os primeiros, mesmo com o mesmo aporte. Prazo costuma pesar mais que a taxa.</p>
+      </details>
+
+      <details>
+        <summary>O que esta calculadora não considera</summary>
+        <p>Imposto de renda, IOF, taxas de administração, inflação e variações de rentabilidade. O resultado é uma estimativa com taxa constante. Para comparar investimentos reais, use a taxa líquida que você espera receber.</p>
+      </details>
+    </section>
+  </main>
+
+  <aside class="lateral"><div class="ad ad-vert" data-ad="right" data-w="160" data-h="600"></div></aside>
+</div>
+
+<div class="faixa faixa-base"><div class="ad" data-ad="bottom" data-w="728" data-h="90"></div></div>
+
+<footer class="rodape">
+  <div class="rodape-in">
+    <p>As simulações são estimativas e não constituem recomendação de investimento.</p>
+    <a href="privacidade.html">Política de privacidade</a>
+  </div>
+</footer>
+
+<div id="popup" class="popup" hidden>
+  <div class="popup-caixa" role="dialog" aria-modal="true" aria-label="Publicidade">
+    <div class="popup-topo">
+      <span>Publicidade</span>
+      <button type="button" id="popup-fechar" disabled>Fechar em <b id="popup-seg">5</b>s</button>
+    </div>
+    <div class="ad" data-ad="popup" data-w="300" data-h="250"></div>
+  </div>
+</div>
+
+<script src="calc.js"></script>
+<script src="ads.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
