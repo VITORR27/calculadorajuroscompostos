@@ -14,7 +14,7 @@
  *  abra o site com ?preview=1 no final do endereço (nada é salvo nesse modo).
  */
 window.ADS_CONFIG = {
-  client: "",
+  client: "ca-pub-4676603047665684",
   slots: {
     top: "",
     left: "",
@@ -84,7 +84,7 @@ window.ADS_CONFIG = {
   }
 
   function carregarScript() {
-    if (!cfg.client) return;
+    if (!cfg.client || document.querySelector('script[src*="adsbygoogle.js"]')) return;
     var s = document.createElement('script');
     s.async = true;
     s.crossOrigin = 'anonymous';
@@ -139,8 +139,9 @@ window.ADS_CONFIG = {
   /* Sem ID do AdSense, nenhum espaço vazio aparece para o visitante.
      Para ver o layout dos anúncios em teste, abra o site com ?preview=1 no final do endereço. */
   var emTeste = /[?&]preview=1/.test(location.search);
-  window.JC_anunciosAtivos = !!cfg.client || emTeste;
-  if (cfg.esconderEspacosVazios && !window.JC_anunciosAtivos) document.documentElement.classList.add('sem-anuncios');
+  var temUnidade = Object.keys(cfg.slots || {}).some(function (k) { return !!cfg.slots[k]; });
+  window.JC_anunciosAtivos = (!!cfg.client && temUnidade) || emTeste;
+  if (!window.JC_anunciosAtivos) document.documentElement.classList.add('sem-anuncios');
 
   aplicarPersonalizacao();
   adicionarMeta();
