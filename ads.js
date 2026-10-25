@@ -24,7 +24,7 @@ window.ADS_CONFIG = {
     popup: ""
   },
 
-  leadsEndpoint: "",     // URL do Apps Script que grava os leads na planilha
+  leadsEndpoint: "https://script.google.com/macros/s/AKfycbySaW3ga6OwtOcssVY6iYTzOV4dsGzBfwD7tBadADM-kPBag7J6ztgvrjje_rh8ZNlh/exec",     // URL do Apps Script que grava os leads na planilha
   leadPopupAtivo: false, // true = liga o formulário de lead (só depois de preencher leadsEndpoint)
   leadNaSimulacao: 2,    // o formulário de lead aparece nesta simulação
 
