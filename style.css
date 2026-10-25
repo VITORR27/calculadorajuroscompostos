@@ -296,7 +296,7 @@ select.sel:focus { border-color: var(--verde); outline: 0; box-shadow: 0 0 0 3px
 .sem-anuncios .layout { grid-template-columns: minmax(0, 1fr); }
 
 
-/* ===== Identidade FineUp ===== */
+/* ===== Identidade FinUp ===== */
 .topo { background: var(--papel); color: var(--tinta); border-bottom: 1px solid var(--linha); }
 .topo-in { padding: 12px 20px; }
 .marca { color: var(--tinta); display: inline-flex; align-items: center; gap: 9px; font-size: 1.45rem; letter-spacing: -0.03em; text-decoration: none; }
